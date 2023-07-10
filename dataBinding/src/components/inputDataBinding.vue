@@ -45,13 +45,50 @@
         </option>
         <option v-for="({ value, label }, index) in options" :key="index" :value="value">
             {{ label }}
-                </option>
-            </select>
-        </div>
-        <div>
-            <p>Select : {{ select }}</p>
-        </div>
-    </main>
+        </option>
+    </select>
+</div>
+<div>
+    <p>Select : {{ select }}</p>
+</div>
+
+<!-- -------------------------------------- TEXTAREA --------------------------------------------->
+
+<div>
+    <textarea placeholder="Text...." v-model="textarea"></textarea>
+</div>
+<div>
+    <p>Textarea : {{ textarea }}</p>
+</div>
+
+// <!-- -------------------------------------- TABLE --------------------------------------------->
+
+<div>
+    <table>
+    <tr>
+        <th>Input</th>
+        <td>{{ input }}</td>
+    </tr>
+    <tr>
+        <th>Radio</th>
+        <td>{{ radio }}</td>
+    </tr>
+    <tr>
+        <th>Checkbox</th>
+        <td>{{ checkbox }}</td>
+    </tr>
+    <tr>
+        <th>Select</th>
+        <td>{{ select }}</td>
+    </tr>
+    <tr>
+        <th>Textarea</th>
+        <td>{{ textarea }}</td>
+    </tr>
+</table>
+</div>
+
+</main>
 </template>
 
 
@@ -84,10 +121,14 @@ const options = [
     { value: "red", label: "red" },
 ]
 
+// <!-- -------------------------------------- TEXTAREA --------------------------------------------->
+
+const textarea = ref<string>("");
+
 
 </script>
 
-
+ 
 <style scoped>
 div {
     display: flex;
@@ -99,5 +140,9 @@ div {
 main {
     background-color: rgb(108, 108, 172);
     text-align: center;
+}
+
+th, td {
+  border: 1px solid black;
 }
 </style>
