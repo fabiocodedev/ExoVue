@@ -1,49 +1,64 @@
 <template>
+  <div>
+    NAVBAR !
+  </div>
+  <!-- <v-app>
+<v-navigation-drawer v-model="sidebar" app>
+      <v-list>
+        <v-list-tile
+          v-for="item in menuItems"
+          :key="item.title"
+          :to="item.path">
+          <v-list-tile-action>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>{{ item.title }}</v-list-tile-content>
+        </v-list-tile>
+      </v-list>
+    </v-navigation-drawer>
 
-<v-bottom-navigation>
-  <v-btn value="recent">
-    <v-icon>mdi-history</v-icon>
-
-    Recent
-  </v-btn>
-
-  <v-btn value="favorites">
-    <v-icon>mdi-heart</v-icon>
-
-    Favorites
-  </v-btn>
-
-  <v-btn value="nearby">
-    <v-icon>mdi-map-marker</v-icon>
-
-    Nearby
-  </v-btn>
-</v-bottom-navigation>
-    
+    <v-toolbar app>
+      <span class="hidden-sm-and-up">
+        <v-toolbar-side-icon @click="sidebar = !sidebar">
+        </v-toolbar-side-icon>
+      </span>
+      <v-toolbar-title>
+        <router-link to="/" tag="span" style="cursor: pointer">
+          {{ appTitle }}
+        </router-link>
+      </v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-toolbar-items class="hidden-xs-only">
+        <v-btn
+          flat
+          v-for="item in menuItems"
+          :key="item.title"
+          :to="item.path">
+          <v-icon left dark>{{ item.icon }}</v-icon>
+          {{ item.title }}
+        </v-btn>
+      </v-toolbar-items>
+    </v-toolbar>
+  </v-app> -->
 </template>
 
-<script setup lang="ts">
-   
+<script>
+  export default {
+  name: "App",
+  data(){
+    return {
+      appTitle: 'Awesome App',
+      sidebar: false,
+      menuItems: [
+          { title: 'Home', path: '/home', icon: 'home' },
+          { title: 'Sign Up', path: '/signup', icon: 'face' },
+          { title: 'Sign In', path: '/signin', icon: 'lock_open' }
+     ]
+    }
+  },
+};
 </script>
 
 <style scoped>
-    div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px;
-}
 
-header {
-    background-color: rgb(98, 174, 112);
-    text-align: center;
-}
-nav{
-    display: flex;
-    justify-content: space-around;
-    padding: 2em;
-}
-li{
-    list-style: none;
-}
 </style>

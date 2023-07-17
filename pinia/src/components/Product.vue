@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<!-- <script setup lang="ts">
 import product from '@/stores/product';
 import {Product} from '@/types';
 
@@ -26,4 +26,4 @@ import {Product} from '@/types';
 
 <style scoped>
 
-</style>
+</style> -->
